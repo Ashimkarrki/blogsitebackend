@@ -1,4 +1,13 @@
 const app = require("./app")
+const cors = require("cors");
+
+app.use(
+    cors({
+      origin: "*",
+      methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+    })
+  );
+
 
 const port = 4000;
 process.on("uncaughtException",(err)=>{
